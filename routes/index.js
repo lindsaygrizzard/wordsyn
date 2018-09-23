@@ -15,24 +15,19 @@ function getSimWords(req, res, next) {
     console.log(json);
 
     var reply;
-    // var parsedSimWord = JSON.parse(json)
 
-    for(i=0; i <= 30; i++){
-      reply += json[i].word + " ";
+    for(i=0; i <= 20; i++){
+      if(json[i].tags[0]=='syn'){
+        reply += json[i].word + " ";
+      }
     }
-      
-    // response.json(reply) 
-    
-    
+          
     res.render('index', {title: "Lindsays App", initialWord: word, similarWords: reply});
       
       
   });
 
 
-  // res.render('index', { title: word });
 };
-
-
 
 module.exports = router;
