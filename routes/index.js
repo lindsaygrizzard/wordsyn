@@ -18,13 +18,13 @@ function getSimWords(req, res, next) {
     // var parsedSimWord = JSON.parse(json)
 
     for(i=0; i <= 30; i++){
-        reply += json[i].word + " ";
+      reply += json[i].word + " ";
     }
       
     // response.json(reply) 
     
     
-    res.render('index', {test: reply, title: "TEST TITLE"});
+    res.render('index', {title: "Lindsays App", initialWord: word, similarWords: reply});
       
       
   });
